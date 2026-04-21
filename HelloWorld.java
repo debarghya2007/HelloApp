@@ -1,14 +1,19 @@
 public class HelloWorld {
     public static void main(String[] args) {
-        // If no command-line arguments are provided
+
         if (args.length == 0) {
             System.out.println("Hello, World!");
-        } 
-        // If one or more names are provided, use enhanced for-loop
-        else {
+        } else {
+            String result = "";
+
             for (String name : args) {
-                System.out.println("Hello, " + name + "!");
+                result += name + ", ";
             }
+
+            // remove last ", "
+            result = result.substring(0, result.length() - 2);
+
+            System.out.println("Hello, " + result + "!");
         }
     }
 }
